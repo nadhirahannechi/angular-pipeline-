@@ -4,11 +4,17 @@ pipeline {
             image 'node:10.0.0' 
         }
     }
-   environment {
-        HOME = '.'
+ environment {
+      HOME = '.'
     }
     stages {    
       
+         stage('Checkout') {
+             agent any
+             // disable to recycle workspace data to save time/bandwidth
+             deleteDir()
+             checkout scm
+         }
 
           stage('NPM Install') {
               // silent warn messages
