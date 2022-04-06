@@ -52,7 +52,7 @@ pipeline {
           }
 
         stage('Archive') {
-            agent any
+            agent none
             // archive the build artifact
              steps {
             sh 'tar -cvzf dist.tar.gz --strip-components=1 dist'
@@ -61,7 +61,7 @@ pipeline {
         }
 
         stage('Deploy') {
-            agent any
+            agent none
              steps {
             echo "Deploying..."
              }
