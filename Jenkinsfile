@@ -1,19 +1,6 @@
-#!groovy
-
-properties(
-    [    // To discard old build
-        [$class: 'BuildDiscarderProperty', strategy:
-        // Manages how long to keep records of the builds.
-          [$class: 'LogRotator', artifactDaysToKeepStr: '14', artifactNumToKeepStr: '5', daysToKeepStr: '30', numToKeepStr: '60']],
-        pipelineTriggers(
-          [
-              pollSCM('H/15 * * * *'),
-              cron('@daily'),
-          ]
-        )
-    ]
-)
-node {
+pipeline {
+    agent any
+ stages {
 
     stage('Checkout') {
         // disable to recycle workspace data to save time/bandwidth
@@ -47,6 +34,7 @@ node {
           sh 'ng build --prod --aot --sm --progress=false'
       }
     }
+ }
     //end docker
 
     stage('Archive') {
