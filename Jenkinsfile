@@ -2,7 +2,7 @@ pipeline {
     agent {
               docker {
                 image('trion/ng-cli-karma:1.2.1')
-                args '-p 3000:3000 -u root ' 
+                args '-u root ' 
 
               }
       }
