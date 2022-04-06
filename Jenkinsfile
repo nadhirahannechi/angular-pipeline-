@@ -1,11 +1,12 @@
 pipeline {
     agent any
  stages {
-
     stage('Checkout') {
         // disable to recycle workspace data to save time/bandwidth
+        steps {
         deleteDir()
         checkout scm
+        }
     }
 
     docker.image('trion/ng-cli-karma:1.2.1').inside {
