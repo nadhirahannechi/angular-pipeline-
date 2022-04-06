@@ -4,9 +4,7 @@ pipeline {
             image 'trion/ng-cli-karma:1.2.1' 
         }
     }
- environment {
-      HOME = '.'
-    }
+
     stages {    
       
          stage('Checkout') {
