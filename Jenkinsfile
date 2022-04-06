@@ -21,7 +21,6 @@ pipeline {
           stage('NPM Install') {
               // silent warn messages
                steps {
-                 sh 'rm -rf node_modules'
                   sh 'npm install'
               
                }
