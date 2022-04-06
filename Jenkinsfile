@@ -1,11 +1,10 @@
 pipeline {
-    agent {
-              docker {
-                image('trion/ng-cli-karma:1.2.1')
-                args '-u root ' 
-
-              }
-      }
+ agent {
+        docker {
+            image 'node:10.0.0' 
+            args '-p 3000:3000 -u root ' 
+        }
+    }
     stages {    
          stage('Checkout') {
             // disable to recycle workspace data to save time/bandwidth
