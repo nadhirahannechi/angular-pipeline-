@@ -1,7 +1,7 @@
 pipeline {
  agent {
         docker {
-            image 'node:10.0.0' 
+            image 'trion/ng-cli-karma:1.2.1' 
         }
     }
  environment {
