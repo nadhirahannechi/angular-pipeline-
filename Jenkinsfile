@@ -40,7 +40,6 @@ pipeline {
 
           stage('Build') {
               steps {
-                  milestone 1
                     sh 'ng build --prod --aot --sm --progress=false'
               }
           }
