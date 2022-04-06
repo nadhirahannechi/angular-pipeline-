@@ -12,8 +12,10 @@ pipeline {
          stage('Checkout') {
              agent any
              // disable to recycle workspace data to save time/bandwidth
-             deleteDir()
-             checkout scm
+             steps {
+              deleteDir()
+              checkout scm
+            }
          }
 
           stage('NPM Install') {
