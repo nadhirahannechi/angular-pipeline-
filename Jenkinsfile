@@ -16,9 +16,8 @@ pipeline {
           stage('NPM Install') {
               // silent warn messages
                steps {
-              withEnv(["NPM_CONFIG_LOGLEVEL=warn"]) {
                   sh 'npm install'
-              }
+              
                }
           }
 
