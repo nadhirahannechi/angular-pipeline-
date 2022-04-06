@@ -4,6 +4,9 @@ pipeline {
             image 'trion/ng-cli-karma:1.2.1' 
         }
     }
+ options {
+    buildDiscarder(logRotator(numToKeepStr: '30', artifactNumToKeepStr: '30'))
+  }
 
     stages {    
       
