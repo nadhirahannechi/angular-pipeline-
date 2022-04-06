@@ -8,13 +8,7 @@ pipeline {
         HOME = '.'
     }
     stages {    
-         stage('Checkout') {
-            // disable to recycle workspace data to save time/bandwidth
-            steps {
-            deleteDir()
-            checkout scm
-            }
-        }
+      
 
           stage('NPM Install') {
               // silent warn messages
