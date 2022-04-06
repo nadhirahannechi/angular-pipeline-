@@ -56,7 +56,6 @@ pipeline {
         stage('Deploy') {
             agent any
              steps {
-            milestone()
             echo "Deploying..."
              }
         }
