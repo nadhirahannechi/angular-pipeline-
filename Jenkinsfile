@@ -2,8 +2,10 @@ pipeline {
  agent {
         docker {
             image 'node:10.0.0' 
-            args '-v /.cache/-v /.bower/ -v /.config/configstore/'
         }
+    }
+   environment {
+        HOME = '.'
     }
     stages {    
          stage('Checkout') {
