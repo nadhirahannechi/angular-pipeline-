@@ -28,9 +28,11 @@ pipeline {
 
           stage('Test') {
                steps {
+               script{
               withEnv(["CHROME_BIN=/usr/bin/chromium-browser"]) {
                 sh 'ng test --progress=false --watch false'
               }
+               }
               // add a reporter that creates JUnit XML reports
               junit '**/test-results.xml'
           }
